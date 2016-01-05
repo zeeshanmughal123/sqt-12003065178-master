@@ -1,0 +1,14 @@
+def inorderFromEnd(bst):
+    stack = [bst]
+    while bst.right is not None:
+        bst = bst.right
+        stack.append(bst)
+    while stack:
+        top = stack.pop()
+        if top.left is not None:
+            bst = top.left
+            stack.append(bst)
+            while bst.right is not None:
+                bst = bst.right
+                stack.append(bst)
+        yield top
