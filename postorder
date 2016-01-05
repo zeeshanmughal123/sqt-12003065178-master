@@ -1,0 +1,5 @@
+class Solution:
+    # @param {TreeNode} root
+    # @return {integer[]}
+    def postorderTraversal(self, root):
+        return self.postorderTraversal(root.left) + self.postorderTraversal(root.right) + [root.val] if root else []
